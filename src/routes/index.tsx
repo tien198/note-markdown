@@ -9,6 +9,10 @@ function Home() {
     { title: '6 Section GSAP', slug: '6-SECTION-GSAP' },
     { title: 'Dot Notation', slug: 'DOT-NOTATION' },
     { title: 'GSAP', slug: 'GSAP' },
+    {
+      title: 'Knowledge Summary',
+      slug: 'TanStack Start & Vercel Knowledge Summary',
+    },
   ]
 
   return (
