@@ -10,7 +10,7 @@ function Home() {
     { title: 'Dot Notation', slug: 'DOT-NOTATION' },
     { title: 'GSAP', slug: 'GSAP' },
     {
-      title: 'Knowledge Summary',
+      title: 'TanStack Start & Vercel',
       slug: 'TanStack Start & Vercel Knowledge Summary',
     },
   ]
