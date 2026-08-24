@@ -10,7 +10,6 @@ function Home() {
       title: 'ARCHITECTURE_AND_LEXICAL_FLOW',
       slug: 'ARCHITECTURE_AND_LEXICAL_FLOW',
     },
-    { title: 'Dot Notation', slug: 'DOT-NOTATION' },
     { title: 'GSAP', slug: 'GSAP' },
     {
       title: 'TanStack Start & Vercel',
