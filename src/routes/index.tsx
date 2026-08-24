@@ -10,6 +10,7 @@ function Home() {
       title: 'ARCHITECTURE_AND_LEXICAL_FLOW',
       slug: 'ARCHITECTURE_AND_LEXICAL_FLOW',
     },
+    { title: 'Nginx', slug: 'nginx' },
     { title: 'GSAP', slug: 'GSAP' },
     {
       title: 'TanStack Start & Vercel',

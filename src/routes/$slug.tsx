@@ -50,6 +50,25 @@ function MarkdownPage() {
               {...props}
             />
           ),
+          code: ({ node: _node, className, children, ...props }) => {
+            const isBlock =
+              className?.includes('language-') ||
+              String(children).includes('\n')
+
+            return (
+              <code
+                className={
+                  // isBlock
+                  // ? `${className ?? ''} block overflow-x-auto font-mono text-sm leading-6`
+                  // :
+                  'rounded-md bg-slate-800 px-1.5 py-0.5 font-mono text-[0.875em] text-sky-300'
+                }
+                {...props}
+              >
+                {children}
+              </code>
+            )
+          },
         }}
       >
         {markdown}
