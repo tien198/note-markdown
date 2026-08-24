@@ -6,7 +6,10 @@ export const Route = createFileRoute('/')({
 
 function Home() {
   const markdowns = [
-    { title: '6 Section GSAP', slug: '6-SECTION-GSAP' },
+    {
+      title: 'ARCHITECTURE_AND_LEXICAL_FLOW',
+      slug: 'ARCHITECTURE_AND_LEXICAL_FLOW',
+    },
     { title: 'Dot Notation', slug: 'DOT-NOTATION' },
     { title: 'GSAP', slug: 'GSAP' },
     {

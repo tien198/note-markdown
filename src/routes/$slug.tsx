@@ -10,19 +10,22 @@ const getMarkdownContent = createServerFn({ method: 'GET' })
     if (slug.includes('/') || slug.includes('..')) {
       throw new Error('Invalid slug')
     }
-    
+
     // Vite will bundle these files, making them available in Vercel Serverless Functions
-    const markdownFiles = import.meta.glob('/public/*.{md,MD}', { query: '?raw', import: 'default' })
-    
-    const matchingKey = Object.keys(markdownFiles).find(
-      key => key.toLowerCase().endsWith(`/${slug.toLowerCase()}.md`)
+    const markdownFiles = import.meta.glob('/public/*.{md,MD}', {
+      query: '?raw',
+      import: 'default',
+    })
+
+    const matchingKey = Object.keys(markdownFiles).find((key) =>
+      key.toLowerCase().endsWith(`/${slug.toLowerCase()}.md`),
     )
-    
+
     if (matchingKey) {
       const content = await markdownFiles[matchingKey]()
-      return content as string
+      return content
     }
-    
+
     throw new Error('Markdown file not found')
   })
 
