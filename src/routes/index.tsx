@@ -16,7 +16,14 @@ function Home() {
       title: 'TanStack Start & Vercel',
       slug: 'TanStack Start & Vercel Knowledge Summary',
     },
-    { title: 'Linux Menu Application Mapping', slug: 'LINUX-MENU-APPICATION-MAPING' },
+    {
+      title: 'Tự lo SSL VPS',
+      slug: 'tu-lo-ssl-vps',
+    },
+    {
+      title: 'Linux Menu Application Mapping',
+      slug: 'LINUX-MENU-APPICATION-MAPING',
+    },
   ]
 
   return (
