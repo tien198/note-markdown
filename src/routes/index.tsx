@@ -15,6 +15,10 @@ function Home() {
     { title: 'GSAP Example', slug: 'gsap-to-from-examples' },
     { title: 'GSAP Animation: Thường Gap', slug: 'gsap-animation-thuong-gap' },
     {
+      title: 'GSAP Animation Pattern / Composition',
+      slug: 'animation-pattern-composition',
+    },
+    {
       title: 'TanStack Start & Vercel',
       slug: 'TanStack Start & Vercel Knowledge Summary',
     },
