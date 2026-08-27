@@ -7,6 +7,10 @@ export const Route = createFileRoute('/')({
 function Home() {
   const markdowns = [
     {
+      title: 'Agent Skills',
+      slug: 'agent-skills',
+    },
+    {
       title: 'ARCHITECTURE_AND_LEXICAL_FLOW',
       slug: 'ARCHITECTURE_AND_LEXICAL_FLOW',
     },
