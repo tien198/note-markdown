@@ -20,7 +20,7 @@ function Home() {
     { title: 'GSAP Animation: Thường Gap', slug: 'gsap-animation-thuong-gap' },
     {
       title: 'GSAP Animation Pattern / Composition',
-      slug: 'animation-pattern-composition',
+      slug: 'gsap-animation-patterns-compositions',
     },
     {
       title: 'TanStack Start & Vercel',
