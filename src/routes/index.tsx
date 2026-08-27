@@ -13,6 +13,7 @@ function Home() {
     { title: 'Nginx', slug: 'nginx' },
     { title: 'GSAP', slug: 'GSAP' },
     { title: 'GSAP Example', slug: 'gsap-to-from-examples' },
+    { title: 'GSAP Animation: Thường Gap', slug: 'gsap-animation-thuong-gap' },
     {
       title: 'TanStack Start & Vercel',
       slug: 'TanStack Start & Vercel Knowledge Summary',

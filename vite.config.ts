@@ -8,12 +8,20 @@ import { nitro } from 'nitro/vite'
 import viteReact from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-const config = defineConfig({
+const config = defineConfig(({ command, isPreview }) => ({
   resolve: { tsconfigPaths: true },
-  plugins: [devtools(), tailwindcss(), tanstackStart(), nitro(), viteReact()],
+  plugins: [
+    devtools(),
+    tailwindcss(),
+    tanstackStart(),
+    // Nitro's Vite dev worker can time out while its environment is warming up.
+    // Keep Nitro for production builds/previews and use Start's dev server locally.
+    command === 'build' || isPreview ? nitro() : null,
+    viteReact(),
+  ],
   server: {
     open: true,
   },
-})
+}))
 
 export default config
