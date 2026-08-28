@@ -10,6 +10,7 @@
 - [2. File System Commands](#2-file-system-commands)
   - [`ls`](#ls)
   - [`cp`](#cp)
+  - [`ln`](#ln)
   - [`mv`](#mv)
   - [`rm`](#rm)
   - [`mkdir`](#mkdir)
@@ -23,7 +24,10 @@
   - [`ip`](#ip)
   - [`ss`](#ss)
   - [`ping`](#ping)
-- [6. Running Commands in Background](#6-running-commands-in-background)
+  - [`dig`](#dig)
+- [6. Multimedia Processing Commands](#6-multimedia-processing-commands)
+  - [`ffmpeg`](#ffmpeg)
+- [7. Running Commands in Background](#7-running-commands-in-background)
   - [`nohup`](#nohup)
 - [Phân loại nhanh](#phân-loại-nhanh)
 
@@ -121,6 +125,30 @@ Copy thư mục:
 
 ```bash
 cp -r src backup
+```
+
+---
+
+### `ln`
+
+Tạo liên kết (link) tới file hoặc thư mục.
+
+Cú pháp tổng quát:
+
+```bash
+ln [options] target [link_name]
+```
+
+Mặc định, `ln` tạo hard link:
+
+```bash
+ln file.txt file-hard-link.txt
+```
+
+Dùng `-s` để tạo symbolic link (symlink):
+
+```bash
+ln -s /path/to/target link-name
 ```
 
 ---
@@ -313,7 +341,59 @@ ping -c 4 google.com
 
 ---
 
-## 6. Running Commands in Background
+### `dig`
+
+Tra cứu thông tin DNS của domain như địa chỉ IP, mail server hoặc nameserver.
+
+```bash
+dig example.com
+dig example.com MX
+dig example.com NS
+```
+
+Chỉ hiển thị kết quả ngắn gọn:
+
+```bash
+dig +short example.com
+```
+
+Trên Ubuntu/Debian, `dig` nằm trong package `dnsutils`:
+
+```bash
+sudo apt install dnsutils
+```
+
+---
+
+## 6. Multimedia Processing Commands
+
+Các lệnh dùng để xử lý hình ảnh, âm thanh và video.
+
+### `ffmpeg`
+
+Chuyển đổi, cắt ghép và xử lý file video hoặc âm thanh.
+
+Chuyển video sang định dạng MP4:
+
+```bash
+ffmpeg -i input.mov output.mp4
+```
+
+Trích xuất âm thanh từ video:
+
+```bash
+ffmpeg -i video.mp4 audio.mp3
+```
+
+Cài đặt `ffmpeg` trên Ubuntu/Debian:
+
+```bash
+sudo apt install ffmpeg
+```
+
+---
+
+## 7. Running Commands in Background
 
 ### `nohup`
 
@@ -366,10 +446,11 @@ pgrep -af 'node server.js'
 | Nhóm                                       | Lệnh                            |
 | ------------------------------------------ | ------------------------------- |
 | Process management                         | `pgrep`, `pkill`, `ps`, `kill`  |
-| File system                                | `ls`, `cp`, `mv`, `rm`, `mkdir` |
+| File system                                | `ls`, `cp`, `ln`, `mv`, `rm`, `mkdir` |
 | Permission management                      | `chmod`, `chown`                |
 | Service management                         | `systemctl`, `service`          |
-| Networking                                 | `ip`, `ss`, `ping`              |
+| Networking                                 | `ip`, `ss`, `ping`, `dig`       |
+| Multimedia processing                      | `ffmpeg`                        |
 | Background / session-independent execution | `nohup`                         |
 
 Các lệnh trên nói chung có thể gọi là **Linux commands**, **Unix commands**, **shell commands** hoặc **command-line utilities / CLI utilities**.
