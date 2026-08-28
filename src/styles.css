@@ -1,7 +1,7 @@
+@import 'tailwindcss';
+@import 'github-markdown-css/github-markdown.css';
+@import 'highlight.js/styles/github.css';
 
-@import "tailwindcss";
-@import "github-markdown-css/github-markdown.css";
-@import "highlight.js/styles/github.css";
 * {
   box-sizing: border-box;
 }
@@ -14,6 +14,201 @@ body,
 
 body {
   margin: 0;
-  background-color: #0D1117;
+  background: #0d1117;
+  color: #f0f6fc;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
 }
 
+a {
+  color: inherit;
+}
+
+.library-page {
+  width: min(100% - 32px, 1040px);
+  margin: 0 auto;
+  padding: 56px 0 80px;
+}
+
+.library-header,
+.category-header {
+  max-width: 680px;
+  margin-bottom: 36px;
+}
+
+.library-header h1,
+.category-header h1 {
+  margin: 6px 0 10px;
+  color: #f0f6fc;
+  font-size: clamp(2rem, 7vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.library-header > p:last-child,
+.category-header > p {
+  margin: 0;
+  color: #8b949e;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.section-label {
+  color: #58a6ff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.category-grid,
+.document-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.category-card,
+.document-card {
+  display: flex;
+  min-height: 220px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  background: #161b22;
+  color: #f0f6fc;
+  text-decoration: none;
+  transition:
+    border-color 150ms ease,
+    background-color 150ms ease;
+}
+
+.category-card:hover,
+.document-card:hover {
+  border-color: #58a6ff;
+  background: #1c2128;
+}
+
+.category-card h2,
+.document-card h2 {
+  margin: 16px 0 8px;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+.category-card p,
+.document-card p {
+  margin: 0;
+  color: #8b949e;
+  line-height: 1.55;
+}
+
+.category-card > span,
+.document-card > span,
+.back-link {
+  color: #58a6ff;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.document-count {
+  display: inline-block;
+  color: #8b949e;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 36px;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.category-header .document-count {
+  margin-top: 16px;
+}
+
+.document-page {
+  min-height: 100vh;
+  padding: 24px 16px 64px;
+}
+
+.document-nav {
+  display: flex;
+  width: min(100%, 980px);
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto 16px;
+  overflow-x: auto;
+  color: #8b949e;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.document-nav a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.document-nav a:hover {
+  text-decoration: underline;
+}
+
+.document-content {
+  width: min(100%, 980px);
+  min-height: calc(100vh - 120px);
+  margin: 0 auto;
+  padding: 40px;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+  .library-page {
+    width: min(100% - 24px, 1040px);
+    padding: 36px 0 56px;
+  }
+
+  .category-grid,
+  .document-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .category-card,
+  .document-card {
+    min-height: 190px;
+    padding: 20px;
+  }
+
+  .document-page {
+    padding: 16px 0 48px;
+  }
+
+  .document-nav {
+    width: calc(100% - 24px);
+  }
+
+  .document-content {
+    padding: 24px 16px;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+  }
+}

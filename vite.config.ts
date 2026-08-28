@@ -20,7 +20,7 @@ const config = defineConfig(({ command, isPreview }) => ({
     viteReact(),
   ],
   server: {
-    open: true,
+    open: false,
   },
 }))
 

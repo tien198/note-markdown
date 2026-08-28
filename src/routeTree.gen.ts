@@ -11,6 +11,16 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SlugRouteImport } from './routes/$slug'
+import { Route as AiToolsIndexRouteImport } from './routes/ai-tools/index'
+import { Route as AiToolsSlugRouteImport } from './routes/ai-tools/$slug'
+import { Route as InfrastructureIndexRouteImport } from './routes/infrastructure/index'
+import { Route as InfrastructureSlugRouteImport } from './routes/infrastructure/$slug'
+import { Route as LinuxIndexRouteImport } from './routes/linux/index'
+import { Route as LinuxSlugRouteImport } from './routes/linux/$slug'
+import { Route as SoftwareArchitectureIndexRouteImport } from './routes/software-architecture/index'
+import { Route as SoftwareArchitectureSlugRouteImport } from './routes/software-architecture/$slug'
+import { Route as WebAnimationIndexRouteImport } from './routes/web-animation/index'
+import { Route as WebAnimationSlugRouteImport } from './routes/web-animation/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +32,160 @@ const SlugRoute = SlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AiToolsIndexRoute = AiToolsIndexRouteImport.update({
+  id: '/ai-tools/',
+  path: '/ai-tools/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiToolsSlugRoute = AiToolsSlugRouteImport.update({
+  id: '/ai-tools/$slug',
+  path: '/ai-tools/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InfrastructureIndexRoute = InfrastructureIndexRouteImport.update({
+  id: '/infrastructure/',
+  path: '/infrastructure/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InfrastructureSlugRoute = InfrastructureSlugRouteImport.update({
+  id: '/infrastructure/$slug',
+  path: '/infrastructure/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LinuxIndexRoute = LinuxIndexRouteImport.update({
+  id: '/linux/',
+  path: '/linux/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LinuxSlugRoute = LinuxSlugRouteImport.update({
+  id: '/linux/$slug',
+  path: '/linux/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SoftwareArchitectureIndexRoute =
+  SoftwareArchitectureIndexRouteImport.update({
+    id: '/software-architecture/',
+    path: '/software-architecture/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SoftwareArchitectureSlugRoute =
+  SoftwareArchitectureSlugRouteImport.update({
+    id: '/software-architecture/$slug',
+    path: '/software-architecture/$slug',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WebAnimationIndexRoute = WebAnimationIndexRouteImport.update({
+  id: '/web-animation/',
+  path: '/web-animation/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebAnimationSlugRoute = WebAnimationSlugRouteImport.update({
+  id: '/web-animation/$slug',
+  path: '/web-animation/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$slug': typeof SlugRoute
+  '/ai-tools/$slug': typeof AiToolsSlugRoute
+  '/infrastructure/$slug': typeof InfrastructureSlugRoute
+  '/linux/$slug': typeof LinuxSlugRoute
+  '/software-architecture/$slug': typeof SoftwareArchitectureSlugRoute
+  '/web-animation/$slug': typeof WebAnimationSlugRoute
+  '/ai-tools/': typeof AiToolsIndexRoute
+  '/infrastructure/': typeof InfrastructureIndexRoute
+  '/linux/': typeof LinuxIndexRoute
+  '/software-architecture/': typeof SoftwareArchitectureIndexRoute
+  '/web-animation/': typeof WebAnimationIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$slug': typeof SlugRoute
+  '/ai-tools/$slug': typeof AiToolsSlugRoute
+  '/infrastructure/$slug': typeof InfrastructureSlugRoute
+  '/linux/$slug': typeof LinuxSlugRoute
+  '/software-architecture/$slug': typeof SoftwareArchitectureSlugRoute
+  '/web-animation/$slug': typeof WebAnimationSlugRoute
+  '/ai-tools': typeof AiToolsIndexRoute
+  '/infrastructure': typeof InfrastructureIndexRoute
+  '/linux': typeof LinuxIndexRoute
+  '/software-architecture': typeof SoftwareArchitectureIndexRoute
+  '/web-animation': typeof WebAnimationIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$slug': typeof SlugRoute
+  '/ai-tools/$slug': typeof AiToolsSlugRoute
+  '/infrastructure/$slug': typeof InfrastructureSlugRoute
+  '/linux/$slug': typeof LinuxSlugRoute
+  '/software-architecture/$slug': typeof SoftwareArchitectureSlugRoute
+  '/web-animation/$slug': typeof WebAnimationSlugRoute
+  '/ai-tools/': typeof AiToolsIndexRoute
+  '/infrastructure/': typeof InfrastructureIndexRoute
+  '/linux/': typeof LinuxIndexRoute
+  '/software-architecture/': typeof SoftwareArchitectureIndexRoute
+  '/web-animation/': typeof WebAnimationIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$slug'
+  fullPaths:
+    | '/'
+    | '/$slug'
+    | '/ai-tools/$slug'
+    | '/infrastructure/$slug'
+    | '/linux/$slug'
+    | '/software-architecture/$slug'
+    | '/web-animation/$slug'
+    | '/ai-tools/'
+    | '/infrastructure/'
+    | '/linux/'
+    | '/software-architecture/'
+    | '/web-animation/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$slug'
-  id: '__root__' | '/' | '/$slug'
+  to:
+    | '/'
+    | '/$slug'
+    | '/ai-tools/$slug'
+    | '/infrastructure/$slug'
+    | '/linux/$slug'
+    | '/software-architecture/$slug'
+    | '/web-animation/$slug'
+    | '/ai-tools'
+    | '/infrastructure'
+    | '/linux'
+    | '/software-architecture'
+    | '/web-animation'
+  id:
+    | '__root__'
+    | '/'
+    | '/$slug'
+    | '/ai-tools/$slug'
+    | '/infrastructure/$slug'
+    | '/linux/$slug'
+    | '/software-architecture/$slug'
+    | '/web-animation/$slug'
+    | '/ai-tools/'
+    | '/infrastructure/'
+    | '/linux/'
+    | '/software-architecture/'
+    | '/web-animation/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SlugRoute: typeof SlugRoute
+  AiToolsSlugRoute: typeof AiToolsSlugRoute
+  InfrastructureSlugRoute: typeof InfrastructureSlugRoute
+  LinuxSlugRoute: typeof LinuxSlugRoute
+  SoftwareArchitectureSlugRoute: typeof SoftwareArchitectureSlugRoute
+  WebAnimationSlugRoute: typeof WebAnimationSlugRoute
+  AiToolsIndexRoute: typeof AiToolsIndexRoute
+  InfrastructureIndexRoute: typeof InfrastructureIndexRoute
+  LinuxIndexRoute: typeof LinuxIndexRoute
+  SoftwareArchitectureIndexRoute: typeof SoftwareArchitectureIndexRoute
+  WebAnimationIndexRoute: typeof WebAnimationIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +204,92 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-tools/': {
+      id: '/ai-tools/'
+      path: '/ai-tools'
+      fullPath: '/ai-tools/'
+      preLoaderRoute: typeof AiToolsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-tools/$slug': {
+      id: '/ai-tools/$slug'
+      path: '/ai-tools/$slug'
+      fullPath: '/ai-tools/$slug'
+      preLoaderRoute: typeof AiToolsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/infrastructure/': {
+      id: '/infrastructure/'
+      path: '/infrastructure'
+      fullPath: '/infrastructure/'
+      preLoaderRoute: typeof InfrastructureIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/infrastructure/$slug': {
+      id: '/infrastructure/$slug'
+      path: '/infrastructure/$slug'
+      fullPath: '/infrastructure/$slug'
+      preLoaderRoute: typeof InfrastructureSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/linux/': {
+      id: '/linux/'
+      path: '/linux'
+      fullPath: '/linux/'
+      preLoaderRoute: typeof LinuxIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/linux/$slug': {
+      id: '/linux/$slug'
+      path: '/linux/$slug'
+      fullPath: '/linux/$slug'
+      preLoaderRoute: typeof LinuxSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/software-architecture/': {
+      id: '/software-architecture/'
+      path: '/software-architecture'
+      fullPath: '/software-architecture/'
+      preLoaderRoute: typeof SoftwareArchitectureIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/software-architecture/$slug': {
+      id: '/software-architecture/$slug'
+      path: '/software-architecture/$slug'
+      fullPath: '/software-architecture/$slug'
+      preLoaderRoute: typeof SoftwareArchitectureSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-animation/': {
+      id: '/web-animation/'
+      path: '/web-animation'
+      fullPath: '/web-animation/'
+      preLoaderRoute: typeof WebAnimationIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-animation/$slug': {
+      id: '/web-animation/$slug'
+      path: '/web-animation/$slug'
+      fullPath: '/web-animation/$slug'
+      preLoaderRoute: typeof WebAnimationSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SlugRoute: SlugRoute,
+  AiToolsSlugRoute: AiToolsSlugRoute,
+  InfrastructureSlugRoute: InfrastructureSlugRoute,
+  LinuxSlugRoute: LinuxSlugRoute,
+  SoftwareArchitectureSlugRoute: SoftwareArchitectureSlugRoute,
+  WebAnimationSlugRoute: WebAnimationSlugRoute,
+  AiToolsIndexRoute: AiToolsIndexRoute,
+  InfrastructureIndexRoute: InfrastructureIndexRoute,
+  LinuxIndexRoute: LinuxIndexRoute,
+  SoftwareArchitectureIndexRoute: SoftwareArchitectureIndexRoute,
+  WebAnimationIndexRoute: WebAnimationIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
