@@ -34,6 +34,10 @@ function Home() {
       title: 'Linux Menu Application Mapping',
       slug: 'LINUX-MENU-APPICATION-MAPING',
     },
+    {
+      title: 'Linux CLI',
+      slug: 'LINUX-CLI',
+    },
   ]
 
   return (
