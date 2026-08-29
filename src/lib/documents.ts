@@ -50,6 +50,13 @@ export const documentCategories = [
         source: 'agent-skills',
         summary: 'The SKILL.md standard and its support across coding agents.',
       },
+      {
+        title: 'Plugin Analyze',
+        slug: 'plugin-analyze',
+        source: 'plugin-analyze',
+        summary:
+          'An overview of the Spreadsheets plugin, its skills, tools, and routing.',
+      },
     ],
   },
   {
