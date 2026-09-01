@@ -84,6 +84,13 @@ export const documentCategories = [
     summary: 'GSAP concepts, examples, pitfalls, and composition patterns.',
     documents: [
       {
+        title: 'SharpLink Website UI Analysis',
+        slug: 'sharplink-ui-analysis',
+        source: 'sharplink-ui-analysis',
+        summary:
+          'A detailed review of SharpLink’s visual system, scroll effects, motion, and responsive behavior.',
+      },
+      {
         title: 'GSAP Basics',
         slug: 'gsap-basics',
         source: 'GSAP',
